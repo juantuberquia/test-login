@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import imgUser from "../images/user.jpg";
 import Error from "./Error.jsx";
 
 let users = [

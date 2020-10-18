@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import menu from "../images/menu-hambu.JPG";
 import userInfo from "../images/user-info.JPG";
 import Form from "./Form";
 
 const MenuUsers = () => {
   const [formu, stateFormu] = useState(false);
+  const [id, setId] = useState();
+
+  let getDataLocal = [];
+  useEffect(() => {
+    getDataLocal = [JSON.parse(localStorage.getItem(id))];
+    console.log(getDataLocal);
+  }, [id]);
 
   return (
     <div className="body">
       {formu ? (
-        <Form />
+        <Form setId={setId} />
       ) : (
         <div className="containerUsers">
           <header className="header">
@@ -44,6 +51,17 @@ const MenuUsers = () => {
               <span> estado</span>
               <span> telefono</span>
               <span> e-mail</span>
+              {getDataLocal.map((user) => (
+                <div key={user.id}>
+                  <span> {user.name}</span>
+                  <span> {user.lastName}</span>
+                  <span> {user.id}</span>
+                  <span> {user.job}</span>
+                  <span> {user.state}</span>
+                  <span> {user.number}</span>
+                  <span> {user.email}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

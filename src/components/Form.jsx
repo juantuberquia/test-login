@@ -20,7 +20,7 @@ const Form = ({ setId }) => {
   };
 
   const handleOnclick = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     localStorage.setItem(datos.id, JSON.stringify(datos));
     setId(datos.id);
   };
@@ -110,7 +110,6 @@ const Form = ({ setId }) => {
         </fieldset>
         <div className="buttons">
           <button className="aceptarForm" onClick={handleOnclick}>
-            {" "}
             Aceptar
           </button>
           <button className="cancelarForm"> Cancelar </button>

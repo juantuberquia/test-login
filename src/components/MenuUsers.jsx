@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import menu from "../images/menu-hambu.JPG";
 import userInfo from "../images/user-info.JPG";
 import Form from "./Form";
@@ -7,10 +7,11 @@ const MenuUsers = () => {
   const [formu, stateFormu] = useState(false);
   const [id, setId] = useState();
 
-  let getDataLocal = [];
+  let dato = useRef([]);
+
   useEffect(() => {
-    getDataLocal = [JSON.parse(localStorage.getItem(id))];
-    console.log(getDataLocal);
+    dato.current = [JSON.parse(localStorage.getItem(id))];
+    stateFormu(false);
   }, [id]);
 
   return (
@@ -51,8 +52,8 @@ const MenuUsers = () => {
               <span> estado</span>
               <span> telefono</span>
               <span> e-mail</span>
-              {getDataLocal.map((user) => (
-                <div key={user.id}>
+              {dato.current.map((user) => (
+                <div key={user.id} ref={dato}>
                   <span> {user.name}</span>
                   <span> {user.lastName}</span>
                   <span> {user.id}</span>

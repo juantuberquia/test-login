@@ -145,3 +145,144 @@ input {
     -webkit-transform: scaleY(1);
   }
 }
+
+/* menu user list */
+
+.body {
+  height: 100vh;
+  width: 100%;
+  background-color: #efeff0;
+  padding-top: 5%;
+}
+
+.containerUsers {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgHambuger {
+  width: auto;
+  height: 10px;
+  margin-right: 5%;
+}
+
+.imgHambuger img {
+  width: 100%;
+}
+
+.titleHeader {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.titleHeader span {
+  font-size: 22px;
+  color: #2f66ef;
+}
+
+/* lista de usuarios */
+
+.listUsers {
+  /* margin-top: 3%; */
+  margin: 3% auto 0 auto;
+  width: 85%;
+  /* display: flex; */
+}
+
+.contentList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textUsers {
+  display: flex;
+}
+
+.buttonCrear {
+  width: auto;
+  height: 40px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #1883ba;
+  border-radius: 6px;
+}
+
+.buttonCrear:hover {
+  color: #1883ba;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* infromacion usuarios */
+
+.InfoUser {
+  width: 85%;
+}
+.InfoUser::after {
+  content: "";
+  width: 85%;
+  height: 1px;
+  background-color: rgb(102, 162, 254);
+  display: block;
+}
+
+.InfoUser span {
+  margin-right: 4%;
+  color: #55555a;
+  font-size: 16px;
+}
+
+/* ingresar nuevo usuario */
+
+.contenForm {
+  display: flex;
+}
+
+.columForm {
+  width: 50%;
+  margin-left: 5%;
+}
+
+.style-form {
+  width: 80%;
+  height: 2.5rem;
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 0.6rem;
+  margin-bottom: 2%;
+}
+
+.buttons {
+  display: block;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.aceptarForm {
+  width: auto;
+  height: 40px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #22b009;
+  border-radius: 6px;
+  margin-right: 2%;
+}
+
+.cancelarForm {
+  width: auto;
+  height: 40px;
+  font-size: 18px;
+  color: #22b009;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border-color: #22b009;
+}

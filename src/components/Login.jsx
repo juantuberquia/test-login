@@ -36,13 +36,12 @@ let users = [
 ];
 
 const Login = ({ setShowUsers, setSpinner }) => {
+  const [ErrorData, setErrorData] = useState(false);
+  const [errorUser, setErrorUser] = useState(false);
   const [getData, setGetData] = useState({
     user: "",
     pass: "",
   });
-
-  const [ErrorData, setErrorData] = useState(false);
-  const [errorUser, setErrorUser] = useState(false);
 
   const handleChange = (e) => {
     setGetData({
@@ -55,7 +54,6 @@ const Login = ({ setShowUsers, setSpinner }) => {
     e.preventDefault();
 
     if (getData.user.trim() === "" || getData.pass.trim() === "") {
-      setShowUsers(true);
       setErrorData(true);
     } else if (
       users.find((user) => user.nombre === getData.user) &&
@@ -64,6 +62,7 @@ const Login = ({ setShowUsers, setSpinner }) => {
       setSpinner(true);
       setTimeout(() => {
         setSpinner(false);
+        setShowUsers(true);
       }, 1500);
     } else {
       setErrorUser(true);
